@@ -1,0 +1,22 @@
+<div class=" flex justify-center">
+    <div class="w-1/4 ">
+        <mat-card class="mat-elevation-z8 p-5 items-center justify-center">
+            
+        <img class="center" [src]="logo" alt="" >
+    
+        <h1 class="text-blue-800 font-bold text-2xl text-center">Login</h1>
+        <form [formGroup]="myForm" autocomplete="off">
+        <mat-form-field class="w-full text-base">
+            <mat-label>Usuario</mat-label>
+            <input matInput formControlName="usuario">
+            </mat-form-field>
+            <mat-form-field class="w-full text-base">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="contrasenia">
+            </mat-form-field>
+            <br>
+            <button (click)="ingresar()"  mat-raised-button mat-button color="primary">Ingresar</button>
+        </form>
+        </mat-card>
+    </div>
+</div>

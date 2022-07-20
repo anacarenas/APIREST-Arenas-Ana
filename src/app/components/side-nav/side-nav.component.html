@@ -1,0 +1,37 @@
+<div class="" >
+    <mat-toolbar color="primary" class=" z-10">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="ml-1">2PF-Arenas Ana</h1>
+    </mat-toolbar>
+    <mat-sidenav-container class="absolute">
+      <mat-sidenav #snav >
+        <mat-nav-list *ngIf="true">
+            <a mat-list-item routerLink="{{nav.route}}" *ngFor="let nav of adminNav" >
+                <mat-icon>{{nav.icon}}</mat-icon>
+                {{nav.name}} 
+            </a>
+        </mat-nav-list>
+        <mat-nav-list *ngIf="false">
+            <a mat-list-item routerLink="{{nav.route}}" *ngFor="let nav of userNav" >
+                <mat-icon>{{nav.icon}}</mat-icon>
+                {{nav.name}} 
+            </a>
+        </mat-nav-list>
+        <mat-nav-list *ngIf="false">
+            <a mat-list-item routerLink="{{nav.route}}" *ngFor="let nav of noneNav" >
+                <mat-icon>{{nav.icon}}</mat-icon>
+                {{nav.name}} 
+            </a>
+        </mat-nav-list>
+
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="w-full h-full">
+        <router-outlet (rol)="actualizarRol($event)" ></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+ 
+  
+  
